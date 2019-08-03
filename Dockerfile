@@ -18,3 +18,6 @@ COPY pdnsmanager.conf /etc/apache2/sites-available/pdnsmanager.conf
 RUN set -ex \
     && rm -rf /etc/apache2/sites-enabled/* \
     && ln -s /etc/apache2/sites-available/pdnsmanager.conf /etc/apache2/sites-enabled/pdnsmanager.conf
+
+COPY start.sh /usr/local/bin/start.sh
+CMD ["/usr/local/bin/start.sh"]
