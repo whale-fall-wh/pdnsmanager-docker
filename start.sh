@@ -1,16 +1,16 @@
 #!/usr/bin/env sh
 
-if [ ! -f /var/www/html/backend/config/ConfigUser.php ] && [ -n ${DB_HOST} ] && [ -n ${DB_USER} ] && [ -n ${DB_PASS} ] && [ -n ${DB_NAME} ]; then
+if [ ! -f /var/www/html/backend/config/ConfigUser.php ] && [ -n ${MYSQL_HOST} ] && [ -n ${MYSQL_USER} ] && [ -n ${MYSQL_PASS} ] && [ -n ${MYSQL_DB} ]; then
     cat <<EOF>ConfigUser.php
 <?php
 
 return array (
   'db' =>
   array (
-    'host' => '${DB_HOST}',
-    'user' => '${DB_USER}',
-    'password' => '${DB_PASS}',
-    'dbname' => '${DB_NAME}',
+    'host' => '${MYSQL_HOST}',
+    'user' => '${MYSQL_USER}',
+    'password' => '${MYSQL_PASS}',
+    'dbname' => '${MYSQL_DB}',
     'port' => 3306,
   ),
 );
