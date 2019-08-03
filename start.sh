@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 if [ ! -f /var/www/html/backend/config/ConfigUser.php ] && [ -n ${MYSQL_HOST} ] && [ -n ${MYSQL_USER} ] && [ -n ${MYSQL_PASS} ] && [ -n ${MYSQL_DB} ]; then
-    cat <<EOF>ConfigUser.php
+    cat <<EOF>/var/www/html/backend/config/ConfigUser.php
 <?php
 
 return array (
